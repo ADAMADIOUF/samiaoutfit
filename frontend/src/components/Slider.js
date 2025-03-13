@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const slides = [
   {
@@ -83,7 +84,9 @@ const Slider = () => {
               >
                 <h1>{slide.title}</h1>
                 <p>{slide.description}</p>
-                <button className='buy-now-btn'>Acheter Maintenant</button>
+                <Link to='/boutique'>
+                  <button className='buy-now-btn'>Acheter Maintenant</button>
+                </Link>
               </div>
             </div>
           </div>

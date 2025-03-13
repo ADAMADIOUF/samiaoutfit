@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import bigbanner from '../assets/bigbanner.png'
+import { Link } from 'react-router-dom'
 
 const Banner = () => {
   // Initializing countdown time
@@ -52,7 +53,9 @@ const Banner = () => {
         <div className='banner-details'>
           <div className='banner-text'>
             <h1>Explorez chaque partie de ces produits</h1>
-            <button className='buy-now-btn'>Achetez maintenant</button>
+            <Link to='/boutique'>
+              <button className='buy-now-btn'>Acheter Maintenant</button>
+            </Link>
           </div>
 
           <div className='countdown'>
