@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  useLoginMutation,
-  
-} from '../slices/userApiSlice'
+import { useLoginMutation } from '../slices/userApiSlice'
 import { setCredentials } from '../slices/authSlice'
 import { toast } from 'react-toastify'
 import Loader from '../components/Loading'
@@ -40,47 +37,47 @@ const Login = () => {
 
   return (
     <div className='login-screen section-center'>
-      <h1>Sign In</h1>
+      <h1>Se connecter</h1>
       <form onSubmit={submitHandler}>
         <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
+          <label htmlFor='email'>Adresse e-mail</label>
           <input
             type='email'
             id='email'
-            placeholder='Enter email'
+            placeholder="Entrez l'email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Mot de passe</label>
           <input
             type='password'
             id='password'
-            placeholder='Enter password'
+            placeholder='Entrez le mot de passe'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
         <button type='submit' className='submit-button' disabled={isLoading}>
-          Sign In
+          Se connecter
         </button>
         {isLoading && <Loader />}
       </form>
 
       <div className='links'>
-        <Link to='/forgot-password'>Forgot your password?</Link>
+        <Link to='/forgot-password'>Mot de passe oublié ?</Link>
         <div className='register-link'>
-          New Customer?{' '}
+          Nouveau client ?{' '}
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Create account
+            Créer un compte
           </Link>
         </div>
       </div>
       <div className='return-to-store'>
-        <Link to='/'>Return to Store</Link>
+        <Link to='/'>Retour à la boutique</Link>
       </div>
     </div>
   )

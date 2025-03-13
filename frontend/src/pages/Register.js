@@ -32,7 +32,7 @@ const Register = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      toast.error('Passwords do not match')
+      toast.error('Les mots de passe ne correspondent pas')
       return
     }
     try {
@@ -46,69 +46,69 @@ const Register = () => {
 
   return (
     <div className='login-screen section-center'>
-      <h1>Create Account</h1>
+      <h1>Créer un compte</h1>
       <form onSubmit={submitHandler}>
         <div className='form-group'>
-          <label htmlFor='name'>Name</label>
+          <label htmlFor='name'>Nom</label>
           <input
             type='text'
             id='name'
-            placeholder='Enter your name'
+            placeholder='Entrez votre nom'
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
+          <label htmlFor='email'>Adresse e-mail</label>
           <input
             type='email'
             id='email'
-            placeholder='Enter email'
+            placeholder='Entrez votre e-mail'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Mot de passe</label>
           <input
             type='password'
             id='password'
-            placeholder='Enter password'
+            placeholder='Entrez un mot de passe'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='confirmPassword'>Confirm Password</label>
+          <label htmlFor='confirmPassword'>Confirmer le mot de passe</label>
           <input
             type='password'
             id='confirmPassword'
-            placeholder='Confirm password'
+            placeholder='Confirmez le mot de passe'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>
         <button type='submit' className='submit-button' disabled={isLoading}>
-          Register
+          S'inscrire
         </button>
         {isLoading && <Loader />}
       </form>
 
       <div className='links'>
         <div className='login-link'>
-          Already have an account?{' '}
+          Vous avez déjà un compte ?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Sign In
+            Se connecter
           </Link>
         </div>
       </div>
 
       <div className='return-to-store'>
-        <Link to='/'>Return to Store</Link>
+        <Link to='/'>Retour à la boutique</Link>
       </div>
     </div>
   )
